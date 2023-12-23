@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+ randomizer-service:
+  image: miverboven/python-api-test
+  deploy:
+    replicas: 10
+    restart_policy:
+      condition: on-failure
+  ports:
+    - "8000:8000"

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add festival</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+
+<h1>Add a poduim</h1>
+
+<div x-data="poduimData()">
+    <label for="name">poduim Name:</label><br>
+    <input x-model="poduim.name" type="text" id="name" required><br><br>
+    <button @click="createPoduim">Add poduim</button>
+</div>
+
+<script>
+function poduimData() {
+    return {
+        band: {
+            name: ''
+        },
+        createPoduim() {
+            fetch('/poduims', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.band),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Band created successfully with ID: ' + data.id);
+                location.href = '/static/poduim/poduim.html'; // Redirect to the main page
+
+            })
+            .catch(error => {
+                console.error("There was an error:", error);
+                alert("Failed to create the band.");
+            });
+        }
+    };
+}
+</script>
+
+</body>
+</html>

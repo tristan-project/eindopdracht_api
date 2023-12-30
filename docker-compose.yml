@@ -3,14 +3,14 @@ services:
   python-service:
     image: tristanberkie/eindopdracht_api
     deploy:
-      replicas: 1
+      replicas: 2
       restart_policy:
         condition: on-failure
     ports:
       - "8000:8000"
     volumes:
-      - sqlite_volume: /code/sqlitedb
+      - sqlite_volume:/code/sqlitedb
     
-    
+
   volumes:
-    - sqlite_volume:
+    sqlite_volume:

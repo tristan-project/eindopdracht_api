@@ -12,5 +12,5 @@ services:
       - sqlite_volume:/code/sqlitedb
     
 
-  volumes:
-    sqlite_volume:
+volumes:
+  sqlite_volume:

@@ -3,10 +3,10 @@ from sqlalchemy.orm import Session
 
 from uuid import UUID, uuid4
 
-from app.models import User
+# from app.models import User
 import app.models as models
 import app.schemas as schemas
-from app.utils import hash_password
+import app.auth as auth
 
 
 def get_user(db: Session, user_id: str):
@@ -25,7 +25,7 @@ def get_user_by_email(db: Session, email: str):
 
 def create_user(db: Session, user: schemas.UserCreate):
     print("Creating user with data:", user)
-    hashed_password = hash_password(user.password)
+    hashed_password = auth.get_password_hash(user.password)
     db_user = models.User(first_name = user.first_name, last_name = user.last_name, email=user.email, hashed_password=hashed_password)
     db.add(db_user)
     db.commit()
@@ -44,7 +44,7 @@ def create_user(db: Session, user: schemas.UserCreate):
 
 
 def update_user(db: Session, user_id: str, updated_data: dict):
-    user = db.query(User).filter(User.id == user_id).first()
+    user = db.query(models.User).filter(models.User.id == user_id).first()
     for key, value in updated_data.items():
         setattr(user, key, value)
     db.commit()
@@ -54,7 +54,7 @@ def update_user(db: Session, user_id: str, updated_data: dict):
 
 
 def delete_user(db: Session, user_id: str):
-    user = db.query(User).filter(User.id == user_id).first()
+    user = db.query(models.User).filter(models.User.id == user_id).first()
     if user:
         db.delete(user)
         db.commit()

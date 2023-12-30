@@ -67,10 +67,10 @@ class Lineup(Base):
     festival = relationship("Festival", back_populates="lineups")
     user = relationship("User", back_populates="lineups")
 
-# Create a database engine and a session
-engine = create_engine('sqlite:///example.db')
-Session = sessionmaker(bind=engine)
-session = Session()
+# # Create a database engine and a session
+# engine = create_engine('sqlite:///example.db')
+# Session = sessionmaker(bind=engine)
+# session = Session()
 
-# Create the table in the database
-Base.metadata.create_all(engine)
+# # Create the table in the database
+# Base.metadata.create_all(engine)

@@ -13,13 +13,27 @@ import app.crud as crud
 import app.models as models
 import app.schemas as schemas
 import app.database as database
-import os
 
+
+#"sqlite:///./sqlitedb/sqlitedata.db"
+models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 
 
+# Dependency
+def get_db():
+    db = database.SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+
 
 
 @app.get("/")
@@ -37,14 +51,6 @@ async def get_index_html():
 async def get_random_percentage():
     return {'percentage': randint(0, 100)}
 
-
-# Dependency
-def get_db():
-    db = database.SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 # @app.post("/users/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
 # def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):

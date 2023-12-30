@@ -12,9 +12,9 @@ Tijdens de oplevering geef je dan je GitHub repository links mee, je hosting lin
 1. ❔ ALGEMENE EISEN & DOCUMENTATIE (alles samen +50%)
 
 Minstens 3 GET, 1 POST, 1 PUT en 1 DELETE endpoints
-
+ok
 Minstens 3 entiteiten in je API via een SQLite databank
-
+ok
 Minstens hashing en OAuth implementeren
 
 Beschrijving van het gekozen thema, je API(s) en je uitbreidingen + link naar de zaken die hosted zijn op GitHub README.md

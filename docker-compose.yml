@@ -8,9 +8,9 @@ services:
         condition: on-failure
     ports:
       - "8000:8000"
-    volumes:
-      - sqlite_volume:./sqlitedb
+#     volumes:
+#       - sqlite_volume:./sqlitedb
     
 
-volumes:
-  sqlite_volume:
+# volumes:
+#   sqlite_volume:

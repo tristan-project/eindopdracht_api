@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - sqlite_volume:/code/sqlitedb
+      - sqlite_volume:./sqlitedb
     
 
 volumes:

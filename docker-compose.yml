@@ -8,4 +8,9 @@ services:
         condition: on-failure
     ports:
       - "8000:8000"
-  
+    volumes:
+      - sqlite_volume: /code/sqlitedb
+    
+    
+  volumes:
+    - sqlite_volume:

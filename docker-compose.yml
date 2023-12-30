@@ -3,7 +3,7 @@ services:
   python-service:
     image: tristanberkie/eindopdracht_api
     deploy:
-      replicas: 10
+      replicas: 1
       restart_policy:
         condition: on-failure
     ports:

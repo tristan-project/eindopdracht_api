@@ -14,3 +14,7 @@ services:
 
 volumes:
   sqlite_volume:
+      accessModes:
+        - ReadWrite
+      network:
+        0.0.0.0

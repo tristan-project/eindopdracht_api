@@ -34,8 +34,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 
-
-
 @app.get("/")
 async def get_index_html():
     return FileResponse("static/index.html")

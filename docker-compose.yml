@@ -12,7 +12,7 @@ services:
     image: mysql:latest
     environment:
       MYSQL_DATABASE: data
-      MYSQL_USER: app
+      MYSQL_USER: user
       MYSQL_PASSWORD: 4321Secret1234
       MYSQL_ROOT_PASSWORD: 4321Secret1234
     ports:

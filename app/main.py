@@ -3,6 +3,7 @@ from random import randint
 
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.templating import Jinja2Templates
 
 
 from fastapi.responses import FileResponse

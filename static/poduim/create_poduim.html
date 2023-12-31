@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add festival</title>
+    <link rel="stylesheet" href="../styles.css">
+
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
@@ -16,6 +18,8 @@
     <input x-model="poduim.name" type="text" id="name" required><br><br>
     <button @click="createPoduim">Add poduim</button>
 </div>
+
+<a href="/static/index.html"><button>Home</button></a>
 
 <script>
 function poduimData() {

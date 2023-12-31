@@ -8,7 +8,7 @@ import os
 
 # Read the DATABASE_URL environment variable
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./sqlitedb/sqlitedata1.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./sqlitedb1/sqlitedata1.db")
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sqlitedb/sqlitedata1.db"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 

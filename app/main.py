@@ -3,12 +3,12 @@ from random import randint
 
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException, status
-from fastapi.templating import Jinja2Templates
+#from fastapi.templating import Jinja2Templates
 
 import os
 
-import mysql
-import mysql.connector
+#import mysql
+#import mysql.connector
 
 from fastapi.responses import FileResponse
 
@@ -29,6 +29,8 @@ import app.database as database
 # cursor = connection.cursor
 
 #"sqlite:///./sqlitedb/sqlitedata.db"
+#test1
+
 
 print("We are in the main.......")
 if not os.path.exists('.\sqlitedb'):

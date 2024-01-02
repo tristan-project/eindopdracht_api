@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.templating import Jinja2Templates
 
+import mysql.connector
 
 from fastapi.responses import FileResponse
 
@@ -16,6 +17,11 @@ import app.schemas as schemas
 import app.database as database
 
 
+
+connection = mysql.connector.connect(
+    user='root', password= '4321Secret1234', port="3306", database='mysql'
+
+)
 #"sqlite:///./sqlitedb/sqlitedata.db"
 models.Base.metadata.create_all(bind=database.engine)
 

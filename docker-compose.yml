@@ -16,7 +16,7 @@ services:
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_DATABASE: data
+      MYSQL_DATABASE: mysql
       MYSQL_USER: user
       MYSQL_PASSWORD: 4321Secret1234
       MYSQL_ROOT_PASSWORD: 4321Secret1234

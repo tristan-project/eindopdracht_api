@@ -4,12 +4,17 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 #connecteren met de database
-SQLALCHEMY_DATABASE_URL = "sqlite:///./code/sqlitedb/sqlitedata.db"
+import os
+
+# Read the DATABASE_URL environment variable
+
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./sqlitedb/sqlitedata1.db")
+# SQLALCHEMY_DATABASE_URL = "sqlite:///./sqlitedb/sqlitedata1.db"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
 #qqnmqken
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    DATABASE_URL, connect_args={"check_same_thread": False}
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

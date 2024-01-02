@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="../styles.css">
+
 </head>
 <body>
 
@@ -18,8 +20,8 @@
                 <ul>
                     <li x-text="'Email: ' + user.email"></li>
                 </ul>
-            <a href="#" @click="deleteUser(user.id)">Delete User</a>
-            <a :href="`edit-user.html?id=${user.id}`">Edit User</a>
+            <a href="#" @click="deleteUser(user.id)"><button class="delete">Delete User</button></a>
+            <a :href="`edit-user.html?id=${user.id}`"><button class="edit">Edit User </button></a>
 
 
             </div>

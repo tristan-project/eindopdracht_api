@@ -26,26 +26,34 @@ Volledige OpenAPI docs screenshot(s) op GitHub README.md
 https://python-service-tristan-project.cloud.okteto.net/openapi.json 
 
 Logisch gebruik van path parameters, query parameters en body
+ok
 
 Docker container voor de API(s), welke automatisch door GitHub Actions opgebouwd wordt
+ok
 
 Deployment van de API container(s) op Okteto Cloud via Docker Compose
+ok
 
 Test alle GET endpoints van een van je APIs via de Requests en pytest library met een testfile in de root van je repository.
+
 
 2. 🔧 AANVULLINGEN: FUNCTIE
 
 2.1 (+5%) Test alle niet-GET endpoints.
+ok
 
 2.2 (+5%) Zorg ervoor dat de testfile ook tijdens de GitHub Actions gerund wordt.
+ok
 
 3. 📳 AANVULLINGEN: FRONT-END
 
 3.1 (+15%) Maak een front-end voor je applicatie die al je GET endpoints en POST endpoints bevat.
+ok
 
 3.1.1 (+10%) Host de front-end op Netlify. 
 
 3.1.2 (+10%) Geef de front-end een leuke stijlgeving.
+ok 
 
 3.1.3 (+15%) Gebruik Vue, React, Angular of Svelte als JavaScript framework.
 

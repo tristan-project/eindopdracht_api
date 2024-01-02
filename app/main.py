@@ -36,10 +36,9 @@ if not os.path.exists('.\sqlitedb'):
     os.makedirs('.\sqlitedb')
 
 print("Creating tables.......")
-models.Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=database.engine)
 print("Tables created.......")
 
-models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 

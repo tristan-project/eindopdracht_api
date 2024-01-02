@@ -8,22 +8,8 @@ services:
         condition: on-failure
     ports:
       - "8000:8000"
-    depends_on:
-      - mysql  # Ensure that the MySQL service is started before the FastAPI service
-    environment:
-      - DATABASE_URL=mysql+mysqlconnector://user:4321Secret1234@mysql/data
-
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_DATABASE: mysql
-      MYSQL_USER: user
-      MYSQL_PASSWORD: 4321Secret1234
-      MYSQL_ROOT_PASSWORD: 4321Secret1234
-    ports:
-      - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - sqlite_useritems_volume:/code/sqlitedb
 
 volumes:
-  mysql_data:
+  sqlite_useritems_volume:

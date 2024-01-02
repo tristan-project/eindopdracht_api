@@ -51,35 +51,51 @@ no
 2. 🔧 AANVULLINGEN: FUNCTIE
 
 2.1 (+5%) Test alle niet-GET endpoints.
-ok
+no
 
 2.2 (+5%) Zorg ervoor dat de testfile ook tijdens de GitHub Actions gerund wordt.
-ok
+no
 
 3. 📳 AANVULLINGEN: FRONT-END
 
 3.1 (+15%) Maak een front-end voor je applicatie die al je GET endpoints en POST endpoints bevat.
-ok
-
+Er is een frontend beschikbaar waar je gebruikers kan toevoegen en verwijderen verandern op een heel efficiente manier. Dit gaat enkel op de localhost en niet via okteto
 3.1.1 (+10%) Host de front-end op Netlify. 
 
 3.1.2 (+10%) Geef de front-end een leuke stijlgeving.
-ok 
+De frontent is voorzien van een opmaak met css. 
 
 3.1.3 (+15%) Gebruik Vue, React, Angular of Svelte als JavaScript framework.
+no 
 
 3.2 (+15%) Maak gebruik van de Grafana Cloud gratis tier om een Grafana oplossing op te zetten om je API te consumen.
+no 
 
 4. 📝 AANVULLINGEN: DATA
 
 4.1 (+20%) Maak een tweede versie van je originele API, maar deze keer gebruik je MongoDB Atlas i.p.v. een SQL oplossing. Je plaatst deze in een nieuwe GitHub repository, met als README.md een korte uitleg van de verschillen.
+no
 
 4.1.1 (+15%) Vervang MongoDB Atlas door een MongoDB container die bij in je deployment zit. Mét volume.
+no
 
 4.2 (+30%) Zet een ActiveMQ message queue systeem voor een endpoint van je API, dit zit tevens ook als container in je deployment.
+no
 
 5. 🔐 AANVULLINGEN: SECURITY
 
 5.1 (+25%) Maak een tweede versie van je originele API, maar deze keer gebruik je Open ID Connect via Okta als Auth oplossing i.p.v. je eigen OAuth implementatie. Je plaatst deze in een nieuwe GitHub repository, met als README.md een korte uitleg van de verschillen.
+no
 
 5.2 (+30%) Deploy een Spring Boot Cloud Gateway (zelf geprogrammeerd) / KrakenD Gateway (zelf geconfigureerd) / Kong Gateway (zelf geconfigureerd) voor een van je APIs. Zorg ervoor dat je endpoints door de Gateway beschermd worden via een check op een token. Eventuele endpoints waarmee je authentiseert zoals /token enz. moeten natuurlijk niet gecheckt worden, aangezien je eerst een token moet kunnen bekomen.
+no 
+
+
+
+# besluit
+
+Over het algemeen ben ik content over mijn prestatie binnen dit project er zijn een aantal verbeter punten. 
+
+zoals de database 
+sommige post endponts 
+en dan een lineup pagina waar het compleet plaatje samen kwam.

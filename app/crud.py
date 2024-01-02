@@ -1,4 +1,3 @@
-from sqlite3 import IntegrityError
 from sqlalchemy.orm import Session
 
 from uuid import UUID, uuid4

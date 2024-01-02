@@ -5,6 +5,9 @@ from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.templating import Jinja2Templates
 
+import os
+
+import mysql
 import mysql.connector
 
 from fastapi.responses import FileResponse
@@ -17,12 +20,25 @@ import app.schemas as schemas
 import app.database as database
 
 
+# IF WE SWITCH TO MYSQL 
+# connection = mysql.connector.connect(
+#     user='user', password= '4321Secret1234', port="3306", database='mysql'
+# ) 
+# print("DB connected")
 
-connection = mysql.connector.connect(
-    user='root', password= '4321Secret1234', port="3306", database='mysql'
+# cursor = connection.cursor
 
-)
 #"sqlite:///./sqlitedb/sqlitedata.db"
+
+print("We are in the main.......")
+if not os.path.exists('.\sqlitedb'):
+    print("Making folder.......")
+    os.makedirs('.\sqlitedb')
+
+print("Creating tables.......")
+models.Base.metadata.create_all(bind=engine)
+print("Tables created.......")
+
 models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()

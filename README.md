@@ -1,41 +1,52 @@
 # eindopdracht_api
 
+Voor de eindopdracht van api development wou ik graag een web app maken waar je de mogelijkheid om festivals te organiseren. Zo zou een gebruiker een poduim kunnen toevoegen dat koppelen aan een festival. Op deze poduims zouden ze dan de keuze kunnen maken om een band toe tevoegen. 
 
-Voor het eindproject werk je wederom individueel een opdracht uit die je huidige kennis binnen het vak toepast, met uitbreiding. Het thema mag je zelf kiezen. 
+Het was de bedoeling om op een heel efficiente manier een lineup te kunnen creeren van een festival, met meerdere mensen tegen gelijk er tijd.
 
-De volledige evaluatie gebeurt op GitHub. Dit wil zeggen dat iets dat niet op GitHub staat, ook niet geëvalueerd zal worden. %-punten die je krijgt per volledige sectie liggen vast. %-punten die vervolgens afgetrokken worden voor niet-complete delen van de sectie liggen niet vast. Eigen bepaalde aanvullingen mogen natuurlijk ook!
 
-Kies (en combineer) uit de aanvullingen zaken die je het meest interesseren. Over het algemeen is het zo dat aanvullingen met een nummer zoals 3.1.1 de aanvulling met nummer 3.1 nodig hebben om relevant te zijn of te werken.
-
-Tijdens de oplevering geef je dan je GitHub repository links mee, je hosting links en een oplijsting van de nummers die je uitgewerkt hebt.
+Hier onder de criterias van de opdracht en waarom ik deze wel of niet heb bereikt.
 
 1. ❔ ALGEMENE EISEN & DOCUMENTATIE (alles samen +50%)
 
 Minstens 3 GET, 1 POST, 1 PUT en 1 DELETE endpoints
-ok
+Ik heb meerdere post voor elk verschillend thema 1 niet alle post werken maar er werkt er minstens 1. Dan heb ik een put om een gebruiker te kunnen aanpassen. een delete voor een gebruiker te kunnen verwijderen ddit is heel mooi uitgewerkt in HTML en CSS. Een get voor een gebruiker een get voor alle gebruikers een get voor specifieke gebruiker een get voor bands ....
+
+![get](readme/get_bands.png)
+![get](readme/get_users.png)
+![get](URL_van_de_afbeelding)
+![post](readme/post_user.png)
+![put](readme/put_user_webpage.png)
+![delete](readme/delete%20users.png)
+
+
 Minstens 3 entiteiten in je API via een SQLite databank
-ok
+database overzicht
+![Alternatieve tekst](readme/database%20overview.png)
 Minstens hashing en OAuth implementeren
+Terug te vinden in AUTH.py
 
 Beschrijving van het gekozen thema, je API(s) en je uitbreidingen + link naar de zaken die hosted zijn op GitHub README.md
-
-Aantoonbare werking totale API door screenshots van Postman requests op GitHub README.md
-
+wat we op dit moment hebben in de browser is het toevoegen verwijderen en veranderen van gebruikers. en dan toevoegen van verschillende zaken zouals bands poduims en festivals, remark voor een of andere reden werken deze zaken alleen locaal (ligt aan mijn database... Heb niet gevonden hoe ik dit kon oplossen)
 Volledige OpenAPI docs screenshot(s) op GitHub README.md
 
-https://python-service-tristan-project.cloud.okteto.net/openapi.json 
+[a link](https://github.com/tristan-project/eindopdracht_api/blob/main/readme/readme2.md)
+[a link](https://python-service-tristan-project.cloud.okteto.net/openapi.json) 
 
 Logisch gebruik van path parameters, query parameters en body
 ok
 
 Docker container voor de API(s), welke automatisch door GitHub Actions opgebouwd wordt
 ok
+![delete](readme/github%20actions.png)
 
 Deployment van de API container(s) op Okteto Cloud via Docker Compose
 ok
 
-Test alle GET endpoints van een van je APIs via de Requests en pytest library met een testfile in de root van je repository.
+https://python-service-tristan-project.cloud.okteto.net/static/index.html
 
+Test alle GET endpoints van een van je APIs via de Requests en pytest library met een testfile in de root van je repository.
+no
 
 2. 🔧 AANVULLINGEN: FUNCTIE
 

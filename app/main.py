@@ -162,15 +162,15 @@ def read_festivals(db: Session = Depends(get_db)):
 
 @app.post("/festivals", response_model=schemas.Festival, status_code=status.HTTP_201_CREATED)
 def create_festivals_endpoint(festival: schemas.FestivalCreate, db: Session = Depends(get_db)):
-    festivals = crud.create_festivals(db, festival)
-    return {"id": festivals, "name": festival.name}
+    db_festival = crud.create_festivals(db, festival)
+    return db_festival
 
 
 
 
 @app.get("/poduims", response_model=list[schemas.Podium])
 def read_poduims(db: Session = Depends(get_db)):
-    poduims = crud.get_festivals(db)
+    poduims = crud.create_festivals(db)
     return poduims
 
 

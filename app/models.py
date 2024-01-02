@@ -35,7 +35,7 @@ class Item(Base):
 class  Band(Base):
     __tablename__ = "bands"
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
-    name = Column(String, index=True)  # Changed to lowercase for consistency
+    name = Column(String, index=True)  
     lineups = relationship("Lineup", back_populates="band")
 
 
@@ -43,25 +43,30 @@ class  Band(Base):
 class Podium(Base):
     __tablename__ = "podiums"
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
-    name = Column(String, index=True)  # Changed to lowercase for consistency
+    name = Column(String, index=True) 
     lineups = relationship("Lineup", back_populates="podium")
 
 class Festival(Base):
     __tablename__ = "festivals"
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
-    name = Column(String, index=True)  # Changed to lowercase for consistency
+    name = Column(String, index=True)
+    location = Column(String)
+    price = Column(Float)
+    year = Column(Integer)
+        # Define a relationship with Lineup
     lineups = relationship("Lineup", back_populates="festival")
+
 
 class Lineup(Base):
     __tablename__ = "lineups"
     id = Column(String(36), primary_key=True, index=True, default=generate_uuid)
-    band_id = Column(String, ForeignKey("bands.id"))  # Changed to lowercase for consistency
-    festival_id = Column(String, ForeignKey("festivals.id"))  # Changed to lowercase for consistency
-    podium_id = Column(String, ForeignKey("podiums.id"))  # Changed to lowercase for consistency
+    band_id = Column(String, ForeignKey("bands.id"))  
+    festival_id = Column(String, ForeignKey("festivals.id")) 
+    podium_id = Column(String, ForeignKey("podiums.id")) 
     owner_id = Column(String, ForeignKey("users.id"))
-    score = Column(Float, index=True)  # Changed to lowercase for consistency
+    score = Column(Float, index=True) 
     year = Column(Integer, index=True)
-    number_of_songs = Column(Integer, index=True)  # Changed to lowercase for consistency
+    number_of_songs = Column(Integer, index=True)  
     band = relationship("Band", back_populates="lineups")
     podium = relationship("Podium", back_populates="lineups")
     festival = relationship("Festival", back_populates="lineups")

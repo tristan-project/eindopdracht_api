@@ -90,19 +90,22 @@ def create_band(db: Session, band: schemas.BandCreate):
 
 
 
-def get_festivals(db: Session):
+def get_festival(db: Session):
     return db.query(models.Festival).all()
-
+    
 
 
 def create_festivals(db: Session, festival: schemas.FestivalCreate):
-    db_festival = models.Festival(name=festival.name)
-    db.add( db_festival)
+    db_festival = models.Festival(
+        name=festival.name,
+        location=festival.location,
+        price=festival.price,
+        year=festival.year
+    )
+    db.add(db_festival)
     db.commit()
-    db.refresh( db_festival)
-    return  db_festival.id
-
-
+    db.refresh(db_festival)
+    return db_festival.id
 
 
 def get_poduims(db: Session):

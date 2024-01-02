@@ -44,14 +44,14 @@ class User(UserBase):
 
 
 
-class UserUpdate(BaseModel):  # For updating a user
+class UserUpdate(BaseModel): 
     first_name: Optional[str]
     last_name: Optional[str]
     email: Optional[str]
 
 
 class BandBase(BaseModel):
-    name: str  # Changed to lowercase for consistency
+    name: str 
 
 
 class BandCreate(BandBase):
@@ -59,11 +59,11 @@ class BandCreate(BandBase):
 
 
 class Band(BandBase):
-    id: UUID  # Changed to snake_case for consistency
+    id: UUID  
 
 
 class PodiumBase(BaseModel):
-    name: str  # Changed to lowercase for consistency
+    name: str  
 
 
 class PodiumCreate(PodiumBase):
@@ -71,28 +71,36 @@ class PodiumCreate(PodiumBase):
 
 
 class Podium(PodiumBase):
-    podium_id: str  # Changed to snake_case for consistency
+    podium_id: str 
 
     class Config:
         from_attributes = True
-
+ 
 
 class FestivalBase(BaseModel):
     name: str
-    location: str  # Changed to lowercase for consistency
+    location: str
+    price: float
+    year: int
+
 
 
 class FestivalCreate(FestivalBase):
     pass
 
-
 class Festival(FestivalBase):
-    festival_id: str  # Changed to snake_case for consistency
-    price: float
-    year: int
+    id: UUID
 
-    class Config:
-        from_attributes = True
+
+
+
+# class Festival(FestivalBase):
+#     festival_id: str  # Changed to snake_case for consistency
+#     price: float
+#     year: int
+
+#     class Config:
+#         from_attributes = True
 
 
 class LineupBase(BaseModel):  # Fixed typo in class name
